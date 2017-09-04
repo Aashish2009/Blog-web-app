@@ -1,0 +1,21 @@
+<div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link active" href="\">Home</a>
+          @if (Auth::check())
+            <a class="nav-link" href="\posts\create">Create Post</a>
+          @endif 
+          <a class="nav-link" href="#">Press</a>
+          <a class="nav-link" href="#">New hires</a>
+          @if (! Auth::check())
+            <a class="nav-link ml-auto" href="\login">Login</a>
+            <a class="nav-link" href="\register">Register</a>
+          @endif  
+          @if (Auth::check())
+            <a class="nav-link ml-auto" href="#">Welcome, {{ Auth::user()->name }}</a>
+            <a class="nav-link" href="\logout">Logout</a>
+           @endif  
+          
+        </nav>
+      </div>
+    </div>
